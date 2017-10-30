@@ -1,0 +1,55 @@
+button {
+    background-color: rgb(95, 119, 228);
+    color: white;
+    padding: 8px 10px;
+    margin: 2px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    align-self: center;
+    border-radius: 4px;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid steelblue;
+    box-sizing: border-box;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#login {
+    align-self: center;
+    margin-right: 2px;
+}
+
+#cancel {
+    float: right;
+}
+
+.login_container {
+    border: 1px;
+    width: 280px;
+    margin: 20px auto;
+}
+
+.img_container {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.login-image {
+    width: 20%;
+    border-radius: 50%;
+}
+
+span.recover_pass {
+    float: right;
+    padding-top: 16px;
+}

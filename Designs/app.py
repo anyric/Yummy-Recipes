@@ -2,17 +2,18 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/Designs')
+@app.route('/')
 def dashbaord():
-    return render_template("dashboard")
+    return render_template("index.html")
 
-@app.route('/Designs/category')
+@app.route('/category')
 def category():
     return render_template("category")
 
-@app.route('/Designs/recipes')
+@app.route('/recipes')
 def recipes():
     return render_template("recipes")
 
 if __name__ ==  '__main__':
     app.run()
+    

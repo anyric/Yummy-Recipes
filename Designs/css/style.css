@@ -1,5 +1,4 @@
-.dash-container {
-    background-color: rgb(37, 37, 37);
+body {
     margin: 0px;
 }
 
@@ -32,6 +31,7 @@ button:hover {
 #login {
     align-self: center;
     margin-right: 2px;
+    width: 280px;
 }
 
 #cancel {
@@ -54,6 +54,17 @@ img.login-image {
     border-radius: 50%;
 }
 
+.home {
+    color: blue;
+    padding: 4px;
+    width: 35px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    background: yellowgreen;
+    text-underline-position: none;
+}
+
 span.recover_pass {
     float: right;
     padding-top: 16px;
@@ -65,6 +76,7 @@ span.recover_pass {
     padding: 20px;
     text-align: center;
     color: white;
+    margin: 0px;
 }
 
 .dash-head {
@@ -77,9 +89,10 @@ span.recover_pass {
 .header-a {
     color: cornsilk;
     font-size: 30px;
+    align-self: left;
 }
 
-.signout {
+.signup {
     color: white;
 }
 
@@ -104,4 +117,24 @@ li a {
 li a:hover {
     background-color: teal;
     color: white;
+}
+
+li .dash-head:hover {
+    background-color: #555;
+}
+
+a {
+    color: white;
+    padding: 10px;
+}
+
+textarea {
+    padding: 4px;
+    font-size: inherit;
+    border: 2px solid steelblue;
+    display: block;
+    margin-bottom: 15px;
+    width: 55%;
+    height: 50px;
+    background: #faf6d9;
 }

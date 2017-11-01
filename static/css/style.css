@@ -49,9 +49,28 @@ button:hover {
     margin: 24px 0 12px 0;
 }
 
+.img_home {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    float: right;
+}
+
 img.login-image {
     width: 20%;
     border-radius: 50%;
+}
+
+.home-image {
+    float: right;
+    padding: 10px;
+    width: 40%;
+}
+
+.welcome {
+    margin: auto;
+    width: 60%;
+    height: 50%;
+    padding: 75px 0;
 }
 
 .home {
@@ -137,4 +156,10 @@ textarea {
     width: 55%;
     height: 50px;
     background: #faf6d9;
+}
+
+footer {
+    text-align: center;
+    padding: 4px;
+    font-style: italic;
 }

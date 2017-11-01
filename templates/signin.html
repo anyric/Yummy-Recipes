@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SignUp</title>
-    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
+    <div class="header">
+        <a class="header-a">Yummy Recipes App </a>
+        <span class="recover_pass"> <a href="/" class="signout">Home</a></span>
+        <span class="recover_pass"> <a href="/signup" class="home">Sign Up</a></span>
+    </div>
     <form>
         <div class="img_container">
-            <img src="../Designs/img/login.png" alt="Login-Image" class="login-image">
+            <img src="{{ url_for('static', filename='img/login.png') }}" alt="Login-Image" class="login-image">
         </div>
         <div class="login_container">
             <label>Username:</label>
@@ -25,9 +31,13 @@
             <button type="submit" id="login">Login</button>
         </div>
 
-
-
     </form>
+    </br>
+    </br>
+    <hr>
+    <footer>
+        @2017 Yummy Recipes, all rights reserved.
+    </footer>
 </body>
 
 </html>

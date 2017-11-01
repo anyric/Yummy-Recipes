@@ -15,20 +15,20 @@
         <span class="recover_pass"> <a href="/" class="signout">Home</a></span>
         <span class="recover_pass"> <a href="/signup" class="home">Sign Up</a></span>
     </div>
-    <form>
+    <form action="/login" method="post">
         <div class="img_container">
             <img src="{{ url_for('static', filename='img/login.png') }}" alt="Login-Image" class="login-image">
         </div>
         <div class="login_container">
             <label>Username:</label>
-            <input type="text" id="username" placeholder="Username">
+            <input type="text" id="username" placeholder="Username" name="username">
             <label>Password:</label>
             <input type="password" id="password" placeholder="Password">
             <input type="checkbox"> Remember me
             <span class="recover_pass">Forgot <a href="#">password?</a></span>
         </div>
         <div class="login_container">
-            <button type="submit" id="login">Login</button>
+            <input type="submit" id="login" value="submit">
         </div>
 
     </form>

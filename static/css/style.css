@@ -14,6 +14,18 @@ button {
     border-radius: 4px;
 }
 
+#login {
+    background-color: rgb(95, 119, 228);
+    color: white;
+    padding: 8px 10px;
+    margin: 2px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    align-self: center;
+    border-radius: 4px;
+}
+
 input[type=text],
 input[type=password] {
     width: 100%;

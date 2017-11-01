@@ -61,7 +61,6 @@ lxml==3.6.0
 MarkupSafe==0.23
 matplotlib==1.5.1
 mccabe==0.6.1
-menuinst==1.4.1
 mistune==0.7.2
 mpmath==0.19
 multipledispatch==0.4.8

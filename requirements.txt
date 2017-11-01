@@ -17,12 +17,6 @@ chest==0.2.3
 click==6.6
 cloudpickle==0.2.1
 colorama==0.3.7
-comtypes==1.1.2
-conda==4.1.6
-conda-build==1.21.3
-conda-env==2.5.0a0
-configobj==5.0.6
-contextlib2==0.5.3
 cryptography==1.4
 cycler==0.10.0
 Cython==0.24

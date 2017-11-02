@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dash Board</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="header">
+        <a class="header-a">Yummy Recipes App </a>
+        <span class="recover_pass"> <a href="/signin" class="signout">Sign In</a></span>
+        <span class="recover_pass"> <a href="/signup" class="home">Sign Up</a></span>
+    </div>
+    <div class="welcome">
+
+        <p> <img src="{{ url_for('static', filename='img/food.jpg') }}" alt="Login-Image" class="home-image">Welcome to Yummy Recipes App your number one food shop. We are pleased to serve you with our delicious meal of all category. Take a few minute of
+            your time to signup so that we can serve you better.
+        </p>
+
+    </div>
+    </br>
+    </br>
+    <hr>
+    <footer>
+        @2017 Yummy Recipes, all rights reserved.
+    </footer>
+</body>
+
+</html>

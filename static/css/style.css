@@ -165,8 +165,8 @@ textarea {
     border: 2px solid steelblue;
     display: block;
     margin-bottom: 15px;
-    width: 55%;
-    height: 50px;
+    width: 100%;
+    height: 60%px;
     background: #faf6d9;
 }
 

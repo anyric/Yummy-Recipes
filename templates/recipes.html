@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SignUp</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
@@ -19,7 +19,11 @@
     </div>
     <form>
         <div class="login_container">
-            <h1>Recipe Category</h1>
+            <h4>Add Recipe</h4>
+            <label>Recipe Name:</label>
+            <input type="text" id="name" name="name" placeholder="Recipe Name">
+            <label>Description:</label>
+            <textarea id="desc" , name="desc" placeholder=" Recipe Description"></textarea>
             <ul>
                 <li><a href="/recipes">Local foods</a></li>
                 <li><a href="/recipes">Beverages</a></li>

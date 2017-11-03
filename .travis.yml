@@ -3,9 +3,9 @@ python:
   - 3.5.2
 
 install:
-  pip install -r requirements.txt
-  pip install coveralls
+  - pip install -r requirements.txt
+  - pip install coveralls
 script:
-  nosetests --with-coverage --cover-package=utilities
+  - nosetests --with-coverage --cover-package=utilities
 after_success:
-  coveralls
+  - coveralls

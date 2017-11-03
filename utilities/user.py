@@ -15,7 +15,7 @@ class User():
             if self.name.strip() and self.username.strip() and self.password.strip():
                 self.store[self.name] = {"Username": self.username, "Password":self.password}
                 ModelDB.ACCOUNTS[self.username] = self.store
-                return "Sign Up successful"
+                return self.store
             return "Empty Field"
         return "Invalid User"
 

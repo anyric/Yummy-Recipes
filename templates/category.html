@@ -17,13 +17,13 @@
         <span class="recover_pass"> <a href="/" class="home">Home</a></span>
 
     </div>
-    <form>
+    <form action="{{ url_for('category') }}" method="POST">
         <div class="login_container">
             <h4>Add Recipe Category</h4>
             <label>Category Name:</label>
             <input type="text" id="name" name="name" placeholder="Category Name">
             <label>Description:</label>
-            <textarea id="desc" , name="desc" placeholder=" Category Description"></textarea>
+            <textarea id="desc" , name="desc" placeholder=" Category Description" rows="6"></textarea>
         </div>
         <div class="login_container">
             <button type="submit" id="login">Add</button>

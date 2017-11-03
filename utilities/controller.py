@@ -6,7 +6,7 @@ from recipe import Recipe
 from flask import render_template, session, redirect, url_for, request, flash
 from run import app
 
-@app.route('/signup', methods=["GET", "POST"])
+@app.route('/signup', methods=["POST"])
 def signup():
     """method to store usser"""
     if request.method == 'POST':
@@ -18,7 +18,7 @@ def signup():
     return render_template('signup.html')
 
 
-@app.route('/signin', methods=['GET', 'POST'])
+@app.route('/signin', methods=['POST'])
 def signin():
     """ Handles the sign_in route """
     if request.method == 'POST':
@@ -34,7 +34,7 @@ def signin():
         return redirect(url_for('/signin'))
     return render_template('signin.html')
 
-@app.route('/category', methods=['GET', 'POST'])
+@app.route('/category', methods=['POST'])
 def category():
     """function to store category"""
     if request.method == 'POST':
@@ -45,7 +45,7 @@ def category():
         flash(cat, 'warning')
     return render_template("category.html")
 
-@app.route('/recipe', methods=['GET', 'POST'])
+@app.route('/recipe', methods=[ 'POST'])
 def recipe():
     """function to store recipe"""
     if request.method == 'POST':

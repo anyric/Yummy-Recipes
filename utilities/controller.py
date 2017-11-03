@@ -45,7 +45,7 @@ def category():
         flash(cat, 'warning')
     return render_template("category.html")
 
-@app.route('/recipe', methods=[ 'POST'])
+@app.route('/recipe', methods=['POST'])
 def recipe():
     """function to store recipe"""
     if request.method == 'POST':

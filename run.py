@@ -1,14 +1,14 @@
 """ module that initiates flask app"""
-from utilities.user import User
-from utilities.modeldb import ModelDB
-from utilities.category import Category
-from utilities.recipe import Recipe
-from flask import Flask, render_template, Session, redirect, url_for, request, flash
+#from utilities.user import User
+#from utilities.modeldb import ModelDB
+#from utilities.category import Category
+#from utilities.recipe import Recipe
+from flask import Flask, render_template, redirect, url_for, request#, flash, Session
 
 app = Flask(__name__)
-app.config['SESSION_TYPE'] = 'memcached'
-app.config['SECRET_KEY'] = 'super secret key'
-sess = Session()
+#app.config['SESSION_TYPE'] = 'memcached'
+#app.config['SECRET_KEY'] = 'super secret key'
+#sess = Session()
 
 
 
@@ -80,9 +80,9 @@ def category():
 def recipe():
     """function to store recipe"""
     if request.method == 'POST':
-        rec = Recipe(request.form['name'], request.form['desc'])
-        if rec.addrecipe() == "Recipe added successful":
-            return redirect(url_for('recipe'))
+        #rec = Recipe(request.form['name'], request.form['desc'])
+        #if rec.addrecipe() == "Recipe added successful":
+        return redirect(url_for('recipe'))
     return render_template("recipes.html")
 
 if __name__ == '__main__':

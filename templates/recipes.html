@@ -17,19 +17,21 @@
         <span class="recover_pass"> <a href="/" class="home">Home</a></span>
 
     </div>
-    <form>
+    <form action="{{ url_for('recipe') }}" method="POST">
         <div class="login_container">
             <h4>Add Recipe</h4>
             <label>Recipe Name:</label>
             <input type="text" id="name" name="name" placeholder="Recipe Name">
             <label>Description:</label>
-            <textarea id="desc" , name="desc" placeholder=" Recipe Description"></textarea>
+            <textarea id="desc" , name="desc" placeholder=" Recipe Description" rows="6"></textarea>
+            <button type="submit" id="login">Add</button>
+            <!--
             <ul>
                 <li><a href="/recipes">Local foods</a></li>
                 <li><a href="/recipes">Beverages</a></li>
                 <li><a href="/recipes">Nyama choma</a></li>
             </ul>
-
+        -->
         </div>
 
     </form>

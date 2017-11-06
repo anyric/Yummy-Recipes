@@ -4,37 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SignUp</title>
-
+    <title>Recipes</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+    <script src="{{ url_for('static', filename='js/input.js') }}"></script>
+
 </head>
 
 <body>
 
     <div class="header">
         <a class="header-a">Python Yummy Recipes App</a>
-        <span class="recover_pass"> <a href="/" class="signout">Sign Out</a></span>
+        <span class="recover_pass"> <a href="/" class="signup">Sign Out</a></span>
         <span class="recover_pass"> <a href="/" class="home">Home</a></span>
 
     </div>
-    <form action="{{ url_for('recipe') }}" method="POST">
-        <div class="login_container">
-            <h4>Add Recipe</h4>
-            <label>Recipe Name:</label>
-            <input type="text" id="name" name="name" placeholder="Recipe Name">
-            <label>Description:</label>
-            <textarea id="desc" , name="desc" placeholder=" Recipe Description" rows="6"></textarea>
-            <button type="submit" id="login">Add</button>
-            <!--
-            <ul>
-                <li><a href="/recipes">Local foods</a></li>
-                <li><a href="/recipes">Beverages</a></li>
-                <li><a href="/recipes">Nyama choma</a></li>
-            </ul>
-        -->
+
+    <div class="container">
+
+        <div class="panel-body">
+            <h4>Recipe List</h4>
+            <a href="#" onclick="addRecipe();" class="btn-floating btn-large waves-effect waves-light blue button-float-right"><i class="material-icons">+</i></a>
         </div>
 
-    </form>
+        <div class="panel panel-default">
+            <div class="list-group">
+                <a href="/recipe" class="list-group-item">Lemon Juice</a>
+                <a href="/recipe" class="list-group-item">Katogo</a>
+                <a href="/recipe" class="list-group-item">sukumawiki</a>
+            </div>
+        </div>
+        <div class="login_container">
+            <button onclick="back();" type="submit" id="login"><< Back</button>
+        </div>
+
+        <div class="footer">
+            @2017 Yummy Recipes, all rights reserved.
+        </div>
 </body>
 
 </html>

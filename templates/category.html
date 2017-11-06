@@ -4,34 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SignUp</title>
-
+    <title>Recipe Categories</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+    <script src="{{ url_for('static', filename='js/input.js') }}"></script>
+
 </head>
 
 <body>
 
     <div class="header">
         <a class="header-a">Python Yummy Recipes App</a>
-        <span class="recover_pass"> <a href="/" class="signout">Sign Out</a></span>
+        <span class="recover_pass"> <a href="/" class="signup">Sign Out</a></span>
         <span class="recover_pass"> <a href="/" class="home">Home</a></span>
 
     </div>
-    <form action="{{ url_for('category') }}" method="POST">
-        <div class="login_container">
-            <h4>Add Recipe Category</h4>
-            <label>Category Name:</label>
-            <input type="text" id="name" name="name" placeholder="Category Name">
-            <label>Description:</label>
-            <textarea id="desc" , name="desc" placeholder=" Category Description" rows="6"></textarea>
-        </div>
-        <div class="login_container">
-            <button type="submit" id="login">Add</button>
+
+    <div class="container">
+
+        <div class="panel-body">
+            <h4>Recipe Category</h4>
+            <!--onclick="window.open('/categorylist', 'newwindow', 'width=300,height=250');"-->
+            <a onclick="addCategory();" class="btn-floating btn-large waves-effect waves-light blue button-float-right"><i class="material-icons">+</i></a>
         </div>
 
+        <div class="panel panel-default">
+            <div class="list-group">
+                <a href="/recipe" class="list-group-item">Beverage</a>
+                <a href="/recipe" class="list-group-item">Katogo</a>
+                <a href="/recipe" class="list-group-item">Greens</a>
+            </div>
+        </div>
 
 
-    </form>
+        <div class="footer">
+            @2017 Yummy Recipes, all rights reserved.
+        </div>
 </body>
 
 </html>

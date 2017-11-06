@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SignUp</title>
+    <title>SignIn</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
@@ -26,19 +26,17 @@
             <label>Password:</label>
             <input type="password" id="password" placeholder="Password" name="password">
             <input type="checkbox"> Remember me
-            <span class="recover_pass">Forgot <a href="#">password?</a></span>
+            <!--<span class="recover_pass">Forgot <a href="#">password?</a></span>-->
         </div>
         <div class="login_container">
             <button type="submit" id="login">Sign In</button>
         </div>
 
     </form>
-    </br>
-    </br>
-    <hr>
-    <footer>
+
+    <div class="footer">
         @2017 Yummy Recipes, all rights reserved.
-    </footer>
+    </div>
 </body>
 
 </html>

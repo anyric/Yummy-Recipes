@@ -15,16 +15,16 @@ class User():
             if self.name.strip() and self.username.strip() and self.password.strip():
                 self.store[self.name] = {"Username": self.username, "Password":self.password}
                 ModelDB.ACCOUNTS[self.username] = self.store
-                return self.store
+                return "User added successfully"
             return "Empty Field"
         return "Invalid User"
 
-    def verifyuser(self):
+    def verifyuser(self, username, password):
         """method to verify user login"""
-        if self.username and self.password:
-            if self.username.strip() and self.password.strip():
-                if ModelDB.ACCOUNTS.get(self.username):
-                    if ModelDB.ACCOUNTS[self.username].Password == self.password:
+        if username and password:
+            if username.strip() and password.strip():
+                if ModelDB.ACCOUNTS.get(username):
+                    if ModelDB.ACCOUNTS[username].Password == password:
                         return "User Loged successful"
                     return "Invalid password"
                 return "account not found"

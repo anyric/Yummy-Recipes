@@ -4,12 +4,9 @@ from utilities.user import User
 from utilities.modeldb import ModelDB
 from utilities.category import Category
 from utilities.recipe import Recipe
-from flask import Flask, render_template, redirect, url_for, request#, flash, Session
+from flask import Flask, render_template, redirect, url_for, request
 
 app = Flask(__name__)
-#app.config['SESSION_TYPE'] = 'memcached'
-#app.config['SECRET_KEY'] = 'super secret key'
-#sess = Session()
 user_dict = {}
 model = ModelDB()
 user_obj = None
@@ -106,9 +103,9 @@ def before_request():
     """"""
 if __name__ == '__main__':
     app.debug = True
-    #port = int(os.environ.get('PORT', 5000))
+    
     app.config['SESSION_TYPE'] = 'file_system'
     app.config['SECRET_KEY'] = 'redsfsfsfsfis'
 
-    #app.run(host='0.0.0.0', port = port)
+    
     app.run()

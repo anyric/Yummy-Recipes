@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add New Category</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <form action="{{ url_for('recipelist') }}" method="POST">
+        <div class="login_container">
+            <h4>Add Recipe</h4>
+            <label>Recipe Name:</label>
+            <input type="text" id="name" name="name" placeholder="Recipe Name">
+            <label>Description:</label>
+            <textarea id="desc" , name="desc" placeholder=" Recipe Description" rows="6"></textarea>
+        </div>
+        <div class="login_container">
+            <button type="submit" id="login">Add</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

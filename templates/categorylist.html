@@ -4,32 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SignUp</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css') }}">
+    <title>Add New Category</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/input.js') }}"></script>
+
 </head>
 
 <body>
 
-    <div class="header">
-        <a class="header-a">Python Yummy Recipes App</a>
-        <span class="recover_pass"> <a href="/" class="signout">Sign Out</a></span>
-        <span class="recover_pass"> <a href="/" class="home">Home</a></span>
-    </div>
-
-    <div class="collection">
-
-        <ul class="collection with-header">
-            <li class="collection-header">
-                <h3>Recipe Category List</h3>
-            </li>
-            <li class="collection-item"><a href="#!" class="collection-item active">Alvin</a></li>
-            <li class="collection-item"><a href="#!" class="collection-item">Alvin</a></li>
-            <li class="collection-item"><a href="#!" class="collection-item">Alvin</a></li>
-            <li class="collection-item"><a href="#!" class="collection-item">Alvin</a></li>
-        </ul>
-
-    </div>
+    <form action="{{ url_for('categorylist') }}" method="POST">
+        <div class="login_container">
+            <h4>Add Recipe Category</h4>
+            <label>Category Name:</label>
+            <input type="text" id="name" name="name" placeholder="Category Name">
+            <label>Description:</label>
+            <textarea id="desc" , name="desc" placeholder=" Category Description" rows="6"></textarea>
+        </div>
+        <div class="login_container">
+            <button onclick="RefreshParent();" type="submit " id="login "><a>Add</a></button>
+        </div>
+    </form>
 
 </body>
 

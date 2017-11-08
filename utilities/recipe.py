@@ -1,5 +1,5 @@
 """"module to create new recipe"""
-from modeldb import ModelDB
+
 class Recipe(object):
     """"class to manage recipes"""
 
@@ -8,19 +8,19 @@ class Recipe(object):
         self.description = description
         self.store = {}
 
+    
     def addrecipe(self):
-        """function to add new recipe"""
-        if self.name and self.description:
-            if self.name.strip() and self.description.strip():
-                self.store[self.name] = self.description
-                ModelDB.RECDATA[self.name] = self.store
-                return "Recipe added successful"
-            return "Empty Field"
-        return "Invalid Recipe"
+        """function to add new category"""
+        if self.name.strip() and self.description.strip():
+            self.store[self.name] = {"Name": self.name, "Description":self.description}
+            return self.store
+        return False
+
     @classmethod
-    def getrecipe(cls):
-        """method to retrieve recipe list"""
-        if ModelDB.RECDATA:
-            return ModelDB.RECDATA
-        return "No recipe added"
+    def getrecipe(cls,name, dict):
+        """method to retrieve category list"""
+        return_value = dict.get(name, {}).get(name,{}).get("Name")
+        if return_value == name:
+            return True
+        return False
     

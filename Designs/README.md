@@ -2,9 +2,7 @@
 An app to keep track of awesome food recipes for individuals who love to cook and eat good food
 https://travis-ci.org/anyric/Yummy-Recipes.svg?branch=master
 
-<<<<<<< HEAD
 https://gentle-ravine-67840.herokuapp.com/
-=======
 
 https://travis-ci.org/anyric/Yummy-Recipes.svg?branch=yummy-pull
 [![Build Status](https://travis-ci.org/anyric/Yummy-Recipes.svg?branch=master)](https://travis-ci.org/anyric/Yummy-Recipes)
@@ -15,4 +13,3 @@ https://travis-ci.org/anyric/Yummy-Recipes.svg?branch=yummy-pull
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/cffc68fa50c8ccce608b/maintainability)](https://codeclimate.com/github/anyric/Yummy-Recipes/maintainability)
 
->>>>>>> 8d0eb1890767320fcc6d3fc065476986898a7dff

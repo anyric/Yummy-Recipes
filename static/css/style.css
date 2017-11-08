@@ -1,5 +1,11 @@
 body {
     margin: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("/static/img/food2.jpg");
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 button {
@@ -59,7 +65,11 @@ button:hover {
 
 .img_container {
     text-align: center;
-    margin: 24px 0 12px 0;
+    margin: auto;
+}
+
+.image_container {
+    margin: auto;
 }
 
 .img_home {
@@ -81,9 +91,29 @@ img.login-image {
 
 .welcome {
     margin: auto;
-    width: 60%;
+    width: 40%;
     height: 50%;
     padding: 75px 0;
+    float: left;
+    color: blue;
+}
+
+.center {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    padding: 10px;
+}
+
+.signup {
+    position: relative;
+    float: right;
+    margin: auto;
+    width: 40%;
+    height: 50%;
+    padding: 75px;
+    background-color: greenyellow;
 }
 
 .home {

@@ -16,7 +16,7 @@
 <body>
 
     <div class="header">
-        <a class="header-a">Python Yummy Recipes App</a>
+        <a class="header-a"> Yummy Recipes App</a>
         <span class="recover_pass"> <a href="/" class="signup">Sign Out</a></span>
         <span class="recover_pass"> <a href="/" class="home">Home</a></span>
 
@@ -26,15 +26,16 @@
 
         <div class="panel-body">
             <h4>Recipe Category</h4>
-            <!--onclick="window.open('/categorylist', 'newwindow', 'width=300,height=250');"-->
-            <a onclick="addCategory();" class="btn-floating btn-large waves-effect waves-light blue button-float-right"><i class="material-icons">+</i></a>
+
+            <a id="addbutton" onclick="addCategory();" class="btn-floating btn-large waves-effect waves-light blue button-float-right"><i class="material-icons">+ Add Category</i> </a>
         </div>
+
 
         <div class="panel panel-default">
             <div class="list-group">
-                <a href="/recipe" class="list-group-item">Beverage</a>
-                <a href="/recipe" class="list-group-item">Katogo</a>
-                <a href="/recipe" class="list-group-item">Greens</a>
+
+                {% for key in cate %}
+                <a id="item" href="/recipe" class="list-group-item">{{key}}</a> {% endfor %}
             </div>
         </div>
 

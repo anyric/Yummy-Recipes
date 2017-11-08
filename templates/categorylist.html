@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add New Category</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/input.js') }}"></script>
+
 </head>
 
 <body>
 
-    <form action="{{ url_for('category') }}" method="POST">
+    <form action="{{ url_for('categorylist') }}" method="POST">
         <div class="login_container">
             <h4>Add Recipe Category</h4>
             <label>Category Name:</label>
@@ -19,7 +21,7 @@
             <textarea id="desc" , name="desc" placeholder=" Category Description" rows="6"></textarea>
         </div>
         <div class="login_container">
-            <button type="submit" id="login">Add</button>
+            <button onclick="RefreshParent();" type="submit " id="login "><a>Add</a></button>
         </div>
     </form>
 

@@ -1,5 +1,4 @@
 """"module to create new category"""
-from modeldb import ModelDB
 class Category(object):
     """"class to manage recipe categories"""
 
@@ -10,17 +9,16 @@ class Category(object):
 
     def addcategory(self):
         """function to add new category"""
-        if self.name and self.description:
-            if self.name.strip() and self.description.strip():
-                self.store[self.name] = self.description
-                ModelDB.CATDATA[self.name] = self.store
-                return "Category added successful"
-            return "Empty Field"
-        return "Invalid Category"
+        if self.name.strip() and self.description.strip():
+            self.store[self.name] = {"Name": self.name, "Description":self.description}
+            return self.store
+        return False
+
     @classmethod
-    def getcategory(cls):
+    def getcategory(cls,name, dict):
         """method to retrieve category list"""
-        if ModelDB.CATDATA:
-            return ModelDB.CATDATA
-        return "No category added"
+        return_value = dict.get(name, {}).get(name,{}).get("Name")
+        if return_value == name:
+            return True
+        return False
     

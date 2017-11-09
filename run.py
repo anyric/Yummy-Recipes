@@ -67,7 +67,7 @@ def categorylistpost():
     model.CATDATA[name] = categoryobject.addcategory()
 
     return redirect(url_for('category'))
-    
+
 @app.route('/category')
 def category():
     """function to store category"""
@@ -81,9 +81,9 @@ def delcatetgory(categoryname):
     """function to store category"""
 
     model.CATDATA.pop(categoryname)
-   
+
     return redirect(url_for('category'))
-   
+
 
 @app.route('/editcatetgory/<name>', methods=['POST'])
 def editcatetgory(name):
@@ -117,9 +117,10 @@ def getcatetgory():
         return render_template("recipelist.html", getcategory=getcategory)
     return render_template("category.html")
 
-@app.route('/recipelist', methods=['GET', 'POST'])
+@app.route('/recipelistpost', methods=['POST'])
 def recipelist():
     """function to store recipe"""
+    return request.form['category'] + " " +request.form['name'] + " "+request.form['desc']
     if request.method == 'POST':
         categ = request.form['category']
         name = request.form['name']
@@ -128,33 +129,26 @@ def recipelist():
         rec = Recipe(categ, name, desc)
 
         model.RECDATA[name] = rec.addrecipe()
-        return redirect(url_for('recipe'))
-    return render_template("recipelist.html")
+    return redirect(url_for('recipe'))
+
 
 
 @app.route('/recipe', methods=['GET', 'POST'])
 def recipe():
     """function to display recipe"""
-    rec = model.RECDATA
+    viewrecipe = model.RECDATA
 
-    num = len(rec)
-    if num > 0:
-        return render_template("recipes.html", rec=rec)
-    return render_template("recipes.html")
+    return render_template("recipes.html", viewrecipe=viewrecipe)
 
 
-@app.route('/delrecipe/<name>')
-def delrecipe(name):
-    """function to del recipe"""
-    rec = model.CATDATA
+@app.route('/deleterecipe/<recipename>')
+def deleterecipe(recipename):
+    """function to delete recipe"""
 
-    num = len(rec)
-    if num > 0:
-        model.RECDATA.pop(name)
-        rec = model.RECDATA
+    model.RECDATA.pop(recipename)
 
-        return render_template("recipe.html", rec=rec)
-    return render_template("recipe.html")
+    return redirect(url_for('recipe'))
+
 
 if __name__ == '__main__':
     app.debug = True

@@ -15,10 +15,9 @@ class Category(object):
         return False
 
     @classmethod
-    def getcategory(cls,name, dict):
+    def getcategory(cls, name, dict):
         """method to retrieve category list"""
-        return_value = dict.get(name, {}).get(name,{}).get("Name")
-        if return_value == name:
-            return True
+        return_value = dict[name][name]
+        if return_value:
+            return return_value
         return False
-    

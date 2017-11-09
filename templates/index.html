@@ -5,40 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dash Board</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body>
+<body class="index_body">
 
-    <div class="header">
-        <a class="header-a">Yummy Recipes App </a>
+    <div class="head">
+        <a class="head-a">Yummy Recipes App </a>
         <span class="recover_pass"> <a href="/signin" class="signout">Sign In</a></span>
-        <span class="recover_pass"> <a href="/signup" class="home">Sign Up</a></span>
+        <span class="recover_pass"> <a href="/" class="home">Home</a></span>
     </div>
-    <div class="container center">
+    <div class="center">
         <div class="welcome">
-
+            <h1>Welcome! to Yummy Recipes</h1>
+            <p>An app to keep track of awesome food recipes for individuals who love to cook and eat good food. We are pleased to serve you with our delicious meal of all category.</p>
             <p>
-                Welcome to Yummy Recipes App your number one food shop. We are pleased to serve you with our delicious meal of all category. Take a few minute of your time to signup so that we can serve you better.
+                Take a few minute of your time to signup so that we can serve you better.
             </p>
 
         </div>
         <div class="signup">
             <form action="{{ url_for('signup') }}" method="POST">
-                <div class="container center">
-                    <img src="{{ url_for('static', filename='img/login.png') }}" alt="Login-Image" class="login-image">
-                </div>
-                <div class="login_container">
-
+                <div class="center">
+                    <img src="{{ url_for('static', filename='img/login.png') }}" alt="Login-Image" class="home-image">
                     <input type="text" id="fname" name="name" placeholder="Fullname">
 
                     <input type="text" id="username" name="username" placeholder="Username">
 
                     <input type="password" id="password" name="password" placeholder="Password">
-                </div>
-                <div class="login_container">
-                    <button type="submit" id="login">Sign Up</button>
+
+                    <button type="submit" id="login">Sign Up!</button>
                 </div>
 
             </form>

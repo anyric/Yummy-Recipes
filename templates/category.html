@@ -5,44 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Recipe Categories</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/input.js') }}"></script>
 
 </head>
 
 <body>
 
-    <div class="header">
-        <a class="header-a"> Yummy Recipes App</a>
-        <span class="recover_pass"> <a href="/" class="signup">Sign Out</a></span>
-        <span class="recover_pass"> <a href="/" class="home">Home</a></span>
-
+    <div class="head">
+        <a class="head-a"> Yummy Recipes App</a>
+        <span class="recover_pass"> <a href="/" class="home">Sign Out</a></span>
     </div>
 
     <div class="container">
 
-        <div class="panel-body">
-            <h4>Recipe Category</h4>
+        <h4>Recipe Category</h4>
 
-            <a id="addbutton" onclick="addCategory();" class="btn-floating btn-large waves-effect waves-light blue button-float-right"><i class="material-icons">+ Add Category</i> </a>
-        </div>
-
-
+        <button type="button " id="cancel"><a href="/categorylist">Create Category</a></button>
+        <br>
+        <br>
+        <br>
         <div class="panel panel-default">
-            <div class="list-group">
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Category Name</th>
+                            <th>Description</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if viewcategory | length > 0%} {% for key in viewcategory %}
+                        <tr>
+                            <td>{{key}}</td>
+                            <td>{{viewcategory[key][key]['Description']}} </td>
+                            <td> <button type="button" class="btn btn-primary btn-block"> <a href='/recipe'>Add Recipe</a></button></td>
+                            <td><button type="button" class="btn btn-primary btn-block"><a href="/editcatetgory">Edit Category</a></button></td>
+                            <td><button type="button" class="btn btn-primary btn-block"><a href="/delcatetgory">Delete Category</a></button></td>
 
-                {% for key in cate %}
-                <a id="item" href="/recipe" class="list-group-item">{{key}}</a> {% endfor %}
+                            </td>
+                        </tr>
+                        {% endfor %} {% else %} {% endif %}
+                    </tbody>
+                </table>
             </div>
         </div>
-
-
-        <div class="footer">
-            @2017 Yummy Recipes, all rights reserved.
-        </div>
+    </div>
+    <div class="footer">
+        @2017 Yummy Recipes, all rights reserved.
+    </div>
 </body>
 
 </html>

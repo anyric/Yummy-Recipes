@@ -32,7 +32,7 @@ def signup():
 
         if user_obj.adduser():
             model.ACCOUNTS[username] = user_obj.adduser()
-            return redirect(url_for('signin'))
+            return redirect(url_for('category'))
     return render_template("index.html")
 
 
@@ -72,38 +72,38 @@ def categorylistpost():
 def category():
     """function to store category"""
     viewcategory = model.CATDATA
-    
-    #num = len(category)
-    #if num > 0:
+
     return render_template("category.html", viewcategory=viewcategory)
-    #return render_template("category.html")
 
 
-@app.route('/delcatetgory/<name>')
-def delcatetgory(name):
+@app.route('/deletecatetgory/<categoryname>')
+def delcatetgory(categoryname):
     """function to store category"""
-    deletecategory = model.CATDATA
 
-    num = len(deletecategory)
-    if num > 0:
-        model.CATDATA.pop(name)
-        deletecategory = model.CATDATA
+    model.CATDATA.pop(categoryname)
+   
+    return redirect(url_for('category'))
+   
 
-        return render_template("category.html", deletecategory=deletecategory)
-    return render_template("category.html")
-
-
-@app.route('/editcatetgory/<name>')
+@app.route('/editcatetgory/<name>', methods=['POST'])
 def editcatetgory(name):
     """function to store category"""
-    deletecategory = model.CATDATA
+    return name
+    old_name = request.form["oldname"]
+    new_name = request.form["newname"]
+    description = request.form["desc"]
 
-    num = len(deletecategory)
+    categorydata = model.CATDATA
+
+    num = len(categorydata)
     if num > 0:
-        model.CATDATA.pop(name)
-        deletecategory = model.CATDATA
+        model.CATDATA.pop(old_name)
+        categoryobject = Category(new_name, description)
 
-        return render_template("category.html", deletecategory=deletecategory)
+        model.CATDATA[new_name] = categoryobject
+        categorydata = model.CATDATA
+
+        return render_template("category.html", categorydata=categorydata)
     return render_template("category.html")
 
 

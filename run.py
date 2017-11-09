@@ -32,8 +32,8 @@ def signup():
 
         if user_obj.adduser():
             model.ACCOUNTS[username] = user_obj.adduser()
-            return redirect(url_for('signin'))
-    return render_template("signup.html")
+            return redirect(url_for('category'))
+    return render_template("index.html")
 
 
 @app.route('/signin', methods=['GET', 'POST'])
@@ -51,45 +51,90 @@ def signin():
     return render_template("signin.html")
 
 
-@app.route('/categorylist', methods=['GET', 'POST'])
-def categorylist():
-    """function to store category"""
-    if request.method == 'POST':
-        name = request.form['name']
-        desc = request.form['desc']
-
-        cat = Category(name, desc)
-        model.CATDATA[name] = cat
-        return redirect(url_for('categorylist'))
+@app.route('/categorylist', methods=['GET'])
+def getcategorylist():
+    """function to get category page"""
     return render_template("categorylist.html")
 
+
+@app.route('/categorylistpost', methods=['POST'])
+def categorylistpost():
+    """function to store category"""
+
+    name = request.form['name']
+    desc = request.form['desc']
+    categoryobject = Category(name, desc)
+    model.CATDATA[name] = categoryobject.addcategory()
+
+    return redirect(url_for('category'))
+    
 @app.route('/category')
 def category():
     """function to store category"""
-    cate = model.CATDATA
+    viewcategory = model.CATDATA
 
-    num = len(cate)
+    return render_template("category.html", viewcategory=viewcategory)
+
+
+@app.route('/deletecatetgory/<categoryname>')
+def delcatetgory(categoryname):
+    """function to store category"""
+
+    model.CATDATA.pop(categoryname)
+   
+    return redirect(url_for('category'))
+   
+
+@app.route('/editcatetgory/<name>', methods=['POST'])
+def editcatetgory(name):
+    """function to store category"""
+    return name
+    old_name = request.form["oldname"]
+    new_name = request.form["newname"]
+    description = request.form["desc"]
+
+    categorydata = model.CATDATA
+
+    num = len(categorydata)
     if num > 0:
-        return render_template("category.html", cate=cate)
+        model.CATDATA.pop(old_name)
+        categoryobject = Category(new_name, description)
+
+        model.CATDATA[new_name] = categoryobject
+        categorydata = model.CATDATA
+
+        return render_template("category.html", categorydata=categorydata)
     return render_template("category.html")
 
+
+@app.route('/getcatetgory')
+def getcatetgory():
+    """function to store category"""
+    getcategory = model.CATDATA
+
+    num = len(getcategory)
+    if num > 0:
+        return render_template("recipelist.html", getcategory=getcategory)
+    return render_template("category.html")
 
 @app.route('/recipelist', methods=['GET', 'POST'])
 def recipelist():
     """function to store recipe"""
     if request.method == 'POST':
+        categ = request.form['category']
         name = request.form['name']
         desc = request.form['desc']
 
-        rec = Recipe(name, desc)
-        model.RECDATA[name] = rec
-        return redirect(url_for('recipelist'))
+        rec = Recipe(categ, name, desc)
+
+        model.RECDATA[name] = rec.addrecipe()
+        return redirect(url_for('recipe'))
     return render_template("recipelist.html")
 
 
 @app.route('/recipe', methods=['GET', 'POST'])
 def recipe():
-    """function to store recipe"""
+    """function to display recipe"""
     rec = model.RECDATA
 
     num = len(rec)
@@ -98,9 +143,19 @@ def recipe():
     return render_template("recipes.html")
 
 
-@app.before_request
-def before_request():
-    """"""
+@app.route('/delrecipe/<name>')
+def delrecipe(name):
+    """function to del recipe"""
+    rec = model.CATDATA
+
+    num = len(rec)
+    if num > 0:
+        model.RECDATA.pop(name)
+        rec = model.RECDATA
+
+        return render_template("recipe.html", rec=rec)
+    return render_template("recipe.html")
+
 if __name__ == '__main__':
     app.debug = True
     

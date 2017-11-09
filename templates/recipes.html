@@ -5,44 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Recipes</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/input.js') }}"></script>
 
 </head>
 
 <body>
 
-    <div class="header">
-        <a class="header-a">Yummy Recipes App</a>
-        <span class="recover_pass"> <a href="/" class="signup">Sign Out</a></span>
-        <span class="recover_pass"> <a href="/" class="home">Home</a></span>
+    <div class="head">
+        <a class="head-a">Yummy Recipes App</a>
+        <span class="recover_pass"> <a href="/" class="home">Sign Out</a></span>
 
     </div>
 
     <div class="container">
 
-        <div class="panel-body">
-            <h4>Recipe List</h4>
-            <a id="addbutton" onclick="addRecipe();" class="btn-floating btn-large waves-effect waves-light blue button-float-right"><i class="material-icons">+</i></a>
-        </div>
-
+        <h4>Recipe List</h4>
+        <button type="button " id="cancel"><a href="/getcatetgory">Add Recipe</a></button>
+        <br>
+        <br>
+        <br>
         <div class="panel panel-default">
-            <div class="list-group">
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Recipe Name</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for key in rec %}
+                        <tr>
+                            <td>{{key}}</td>
+                            <td>{{rec[key][key]['Description']}} </td>
+                            <td><button type="button" class="btn btn-primary btn-block"><a href="/editrecipe">Edit Recipe</a></button></td>
+                            <td><button type="button" class="btn btn-primary btn-block"><a href="/delrecipe">Dele Recipe</a></button></td>
 
-                {% for key in rec %}
-                <a class="list-group-item">{{key}}</a> {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="login_container">
             <button onclick="back();" type="submit" id="login"><< Back</button>
         </div>
-
-        <div class="footer">
-            @2017 Yummy Recipes, all rights reserved.
-        </div>
+    </div>
+    <div class="footer">
+        @2017 Yummy Recipes, all rights reserved.
+    </div>
 </body>
 
 </html>

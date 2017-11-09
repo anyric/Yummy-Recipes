@@ -10,18 +10,21 @@
 
 </head>
 
-<body>
+<body class="index_body">
+    <div class="head">
+        <a class="head-a"> Yummy Recipes App</a>
+        <span class="recover_pass"> <a href="/" class="home">Sign Out</a></span>
+    </div>
 
-    <form action="{{ url_for('categorylist') }}" method="POST">
+    <form action="{{ url_for('categorylistpost') }}" method="POST">
         <div class="login_container">
             <h4>Add Recipe Category</h4>
-            <label>Category Name:</label>
             <input type="text" id="name" name="name" placeholder="Category Name">
-            <label>Description:</label>
             <textarea id="desc" , name="desc" placeholder=" Category Description" rows="6"></textarea>
         </div>
         <div class="login_container">
-            <button onclick="RefreshParent();" type="submit " id="login "><a>Add</a></button>
+            <!-- <button type="submit " id="login" class="cancel_edit">Add</button>-->
+            <button type="submit" id="login">Add</button>
         </div>
     </form>
 

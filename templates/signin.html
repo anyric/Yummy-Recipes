@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <div class="header">
-        <a class="header-a">Yummy Recipes App </a>
+    <div class="head">
+        <a class="head-a">Yummy Recipes App </a>
         <span class="recover_pass"> <a href="/" class="signout">Home</a></span>
-        <span class="recover_pass"> <a href="/signup" class="home">Sign Up</a></span>
+        <span class="recover_pass"> <a href="/" class="home">Sign Up!</a></span>
     </div>
 
     <form action="{{ url_for('signin') }}" method="POST">
@@ -21,11 +21,9 @@
             <img src="{{ url_for('static', filename='img/login.png') }}" alt="Login-Image" class="login-image">
         </div>
         <div class="login_container">
-            <label>Username:</label>
             <input type="text" id="username" placeholder="Username" name="username">
-            <label>Password:</label>
             <input type="password" id="password" placeholder="Password" name="password">
-            <input type="checkbox"> Remember me
+
         </div>
         <div class="login_container">
             <button type="submit" id="login">Sign In</button>

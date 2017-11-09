@@ -26,11 +26,24 @@ function back() {
 
 }
 
-function RefreshParent() {
 
-    window.opener.refresh();
-    alert("after")
+
+$(".cancel_edit").click(function() {
+    window.open('', '_parent', '');
+    window.close();
+});
+
+
+function getlistvalue() {
+    var x = document.getElementsByClassName("list-group-item").text();
+    for (i = 0; i < x.length; i++) {
+        x[i].onclick = function() {
+            console.log(this);
+            alert(this);
+        }
+    }
 }
+
 
 function getid() {
     id = document.getElementById("item").text();

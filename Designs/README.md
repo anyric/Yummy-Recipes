@@ -5,7 +5,6 @@ https://travis-ci.org/anyric/Yummy-Recipes.svg?branch=master
 https://gentle-ravine-67840.herokuapp.com/
 
 
-https://travis-ci.org/anyric/Yummy-Recipes.svg?branch=yummy-pull
 [![Build Status](https://travis-ci.org/anyric/Yummy-Recipes.svg?branch=master)](https://travis-ci.org/anyric/Yummy-Recipes)
 
 <a href="https://codeclimate.com/github/anyric/Yummy-Recipes/test_coverage"><img src="https://api.codeclimate.com/v1/badges/cffc68fa50c8ccce608b/test_coverage" /></a>

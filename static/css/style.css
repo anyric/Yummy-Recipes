@@ -112,6 +112,10 @@ img.login-image {
     color: blue;
 }
 
+.table_head_color {
+    color: white;
+}
+
 .center {
     position: relative;
     margin: auto;

@@ -35,6 +35,7 @@ Flask-Cors==2.1.2
 gevent==1.1.1
 google-api-python-client==1.6.2
 greenlet==0.4.10
+gunicorn==19.7.1
 h5py==2.6.0
 HeapDict==1.0.0
 httplib2==0.10.3

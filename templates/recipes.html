@@ -25,7 +25,7 @@
     <div class="container">
 
         <h4>Recipe List</h4>
-        <button type="button " id="cancel"><a href="/getcatetgory">Add Recipe</a></button>
+        <button type="button " id="cancel"><a href="/getcategorykey">Add Recipe</a></button>
         <br>
         <br>
         <br>
@@ -34,22 +34,31 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Recipe Name</th>
-                            <th></th>
+                            <th class="table_head_color">
+                                Recipe Name
+                            </th>
+                            <th>Category</th>
+                            <th>Description</th>
                             <th></th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for key in rec %}
+                        {% if viewrecipe | length > 0%} {% for key in viewrecipe %}
                         <tr>
                             <td>{{key}}</td>
-                            <td>{{rec[key][key]['Description']}} </td>
-                            <td><button type="button" class="btn btn-primary btn-block"><a href="/editrecipe">Edit Recipe</a></button></td>
+                            <td>{{viewrecipe[key][key]['Category']}} </td>
+                            <td>{{viewrecipe[key][key]['Description']}} </td>
+                            <td><button type="button" class="btn btn-primary btn-block"><a href="/geteditrecipe/{{key}}">Edit Recipe</a></button></td>
                             <td><button type="button" class="btn btn-primary btn-block"><a href='/deleterecipe/{{key}}'>Delete Recipe</a></button></td>
 
                         </tr>
-                        {% endfor %}
+
+                        {% endfor %} {% else %}
+                        <tr>
+                            <h6>No Recipe added yet!</h6>
+                        </tr>
+                        {% endif %}
                     </tbody>
                 </table>
             </div>

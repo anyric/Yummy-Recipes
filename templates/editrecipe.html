@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add New Category</title>
+    <title>Edit Recipe</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/input.js') }}"></script>
 
@@ -16,11 +16,13 @@
         <span class="recover_pass"> <a href="/" class="home">Sign Out</a></span>
     </div>
 
-    <form action="{{ url_for('editcategory') }}" method="POST">
+    <form action="{{ url_for('editrecipe') }}" method="POST">
         <div class="login_container">
-            <h4>Edit Recipe Category</h4>
+            <h4>Edit Recipe</h4>
+            {% for key in editrecipekey %}
+            <input type="text" name="category" value='{{editrecipekey[key]["Category"]}}'> {% endfor %}
             <select name="oldname">
-                    {% for key in editcategorykey %}
+                    {% for key in editrecipekey %}
         
                     <option value='{{key}}'>{{key}}</option>
                         
@@ -28,7 +30,7 @@
                    
                     </select>
             <input type="text" id="name" name="newname" placeholder="New Name">
-            <textarea id="desc" , name="desc" rows="6" placeholder="Category Description"></textarea>
+            <textarea id="desc" , name="desc" rows="6" placeholder="Recipe Description"></textarea>
         </div>
         <div class="login_container">
 

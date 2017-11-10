@@ -47,12 +47,16 @@
                             <td>{{key}}</td>
                             <td>{{viewcategory[key][key]['Description']}} </td>
                             <td> <button type="button" class="btn btn-primary btn-block"> <a href='/recipe'>Add Recipe</a></button></td>
-                            <td><button type="button" class="btn btn-primary btn-block"><a href='/editcatetgory/{{key}}'>Edit Category</a></button></td>
-                            <td><button type="button" class="btn btn-primary btn-block"><a href='/deletecatetgory/{{key}}'>Delete Category</a></button></td>
+                            <td><button type="button" class="btn btn-primary btn-block"><a href='/geteditcategory/{{key}}'>Edit Category</a></button></td>
+                            <td><button type="button" class="btn btn-primary btn-block"><a href='/deletecategory/{{key}}'>Delete Category</a></button></td>
 
                             </td>
                         </tr>
-                        {% endfor %} {% else %} {% endif %}
+                        {% endfor %} {% else %}
+                        <tr>
+                            <h6>No category added yet!</h6>
+                        </tr>
+                        {% endif %}
                     </tbody>
                 </table>
             </div>
